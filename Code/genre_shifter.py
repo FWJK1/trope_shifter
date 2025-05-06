@@ -8,6 +8,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 
 
+
 class genre_shifter:
     def __init__ (self):
         try:
@@ -30,8 +31,7 @@ class genre_shifter:
 
     def build_with_time(self, file):
         df = pd.read_csv(file)
-        df['Trope'] = df['Trope'].astype(str)
-        # df['Trope'] = df['Trope'].apply(lambda x: x.replace(" ", ''))
+        df['Trope'] = df['Trope'].apply(lambda x: x.replace(" ", ''))
         df = df.merge(right=self.matrix_df, on='Trope', how='left')
         df = df[df['Trope'].notna()]
         df = self.scale_to_time(df)
@@ -144,7 +144,7 @@ class genre_shifter:
 
         ax.barh(tropes, shifts, color=bar_colors, edgecolor='black')
         ax.set_xlabel(f'Shifts in {genre}')
-        ax.set_title(f"Reference: {self.ref_name} ({ref_avg:.3f}) \nVs. \n Plotted: {self.comp_name} ({comp_avg:.3f})")
+        ax.set_title(f"{self.ref_name} ({ref_avg:.3f}) \nVs. \n{self.comp_name} ({comp_avg:.3f})")
         ax.tick_params(axis='y', labelsize=8)
 
         position_methods = {
@@ -173,7 +173,6 @@ class genre_shifter:
         self.build_comp_ref_with_time(movie_file, movie_name)
         self.slice_times_and_average(ref_range, comp_range)
         fig, axes = plt.subplots(1, 2, figsize=(14, 6), facecolor="papayawhip")
-        self.reverse_comp_ref()
         self.plot(genre, cutoff=50, ax=axes[0])
         self.reverse_comp_ref()
         self.plot(genre, cutoff=50, ax=axes[1], side='right')
