@@ -1,0 +1,15 @@
+THE LORD OF THE RINGS: THE FELLOWSHIP OF THE RING EXTENDED EDITION
+
+Details
+- 3h49m
+- Extended edition
+
+Notes
+- The list of tropes was cleaned to have about 400 individual trope occurences
+- The tropes spearated at the end were not clear enough to locate
+- Start Time and End Time entered as HH.MM.SS
+- Tropes occurring briefly or within a second where given a 1 second duration
+- Data added includes: the significant part of the story (sig_scene); book_movie_weirdness are tropes that you might want to exclude because it references something occurring in the book that is different in the film and hard to pinpoint the duration of; and cells containing descriptions of many occurences were exploded into individual occurences (more data points)
+- TV Tropes entries for the wrong LOTR film were deleted
+- TV Tropes mentioning a difference from book to film adaptation are at the bottom but un-timed
+
