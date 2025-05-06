@@ -1,7 +1,5 @@
 # import git
 import ast 
-import bs4 as BeautifulSoup
-import requests
 import os
 
 from datetime import datetime
@@ -44,16 +42,6 @@ def eval_pd_data_string_literal(x):
         if isinstance(x, str) and ',' in x: 
             return [item.strip() for item in x.split(',')]
         return None
-
-
-## scraping specific
-def get_parsed_page(url: str) -> BeautifulSoup:
-    headers = {
-        "referer": "https://letterboxd.com",
-        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-    }
-    return BeautifulSoup(requests.get(url, headers=headers).text, "lxml")
-
 
 ## time management
 def get_current_time():
